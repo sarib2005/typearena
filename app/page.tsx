@@ -40,12 +40,11 @@ function Index() {
         {/* Header */}
         <header className="flex items-center justify-between mb-16">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center font-mono font-bold text-primary-foreground text-lg" style={{ boxShadow: "var(--shadow-glow)" }}>
-              V
-            </div>
+            {/* <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center font-mono font-bold text-primary-foreground text-lg" style={{ boxShadow: "var(--shadow-glow)" }}>
+              TA
+            </div> */}
             <div>
-              <h1 className="font-display font-bold text-xl tracking-tight leading-none">velocity</h1>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">typing, refined</p>
+              <h1 className="font-display font-bold text-xl tracking-tight leading-none">TypingArena</h1>
             </div>
           </div>
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
