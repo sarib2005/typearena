@@ -8,7 +8,7 @@ import { ResultsPanel } from "@/componente/home/ResultsPanel";
 const DURATIONS: Duration[] = [15, 30, 60, 120];
 const COUNTS: WordCount[] = [10, 25, 50, 100];
 
-function Index() {
+function Home() {
   const [mode, setMode] = useState<Mode>("time");
   const [duration, setDuration] = useState<Duration>(30);
   const [wordCount, setWordCount] = useState<WordCount>(25);
@@ -146,4 +146,4 @@ function ConfigBtn({ active, onClick, children }: { active: boolean; onClick: ()
   );
 }
 
-export default Index;
+export default Home;
