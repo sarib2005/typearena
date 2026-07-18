@@ -208,7 +208,7 @@ export default function Register() {
         {/* Footer */}
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Already have an account?{" "}
-          <Link href="/signin" className="text-primary hover:text-primary/80 transition-colors font-medium">
+          <Link href="/login" className="text-primary hover:text-primary/80 transition-colors font-medium">
             Sign in
           </Link>
         </p>

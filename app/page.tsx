@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTypingTest, type Mode, type Duration, type WordCount, type Stats } from "@/componente/hooks/use-typing-test";
 import { TypingArea } from "@/componente/home/TypingArea";
 import { ResultsPanel } from "@/componente/home/ResultsPanel";
+import Link from "next/link";
 
 const DURATIONS: Duration[] = [15, 30, 60, 120];
 const COUNTS: WordCount[] = [10, 25, 50, 100];
@@ -41,13 +42,15 @@ function Home() {
         <header className="flex items-center justify-between mb-8 sm:mb-16">
           <div className="flex items-center gap-2 sm:gap-3">
             <div>
-              <h1 className="font-display font-bold text-lg sm:text-xl tracking-tight leading-none">TypingArena</h1>
+              <h1 className="font-display font-bold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              TypingArena
+            </h1>
             </div>
           </div>
           <nav className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors hidden sm:inline">leaderboard</a>
-            <a href="#" className="hover:text-foreground transition-colors hidden sm:inline">about</a>
-            <a href="#" className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-md border border-border hover:border-primary hover:text-foreground transition-all text-xs sm:text-sm">sign in</a>
+            <Link href="#" className="hover:text-foreground transition-colors hidden sm:inline">leaderboard</Link>
+            <Link href="#" className="hover:text-foreground transition-colors hidden sm:inline">about</Link>
+            <Link href="login" className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-md border border-border hover:border-primary hover:text-foreground transition-all text-xs sm:text-sm">sign in</Link>
           </nav>
         </header>
 
