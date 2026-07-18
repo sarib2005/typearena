@@ -24,14 +24,12 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
     containerRef.current.style.transform = `translateY(-${Math.max(0, wordTop - offset)}px)`;
   }, [wordIdx, words]);
 
-  // Position caret
   useLayoutEffect(() => {
-    if (!caretRef.current || !activeCharRef.current) return;
-    const parent = caretRef.current.parentElement!;
-    const rect = activeCharRef.current.getBoundingClientRect();
-    const parentRect = parent.getBoundingClientRect();
-    caretRef.current.style.transform = `translate(${rect.left - parentRect.left}px, ${rect.top - parentRect.top}px)`;
-    caretRef.current.style.height = `${rect.height}px`;
+    if (!caretRef.current || !activeCharRef.current || !containerRef.current) return;
+    const charRect = activeCharRef.current.getBoundingClientRect();
+    const containerRect = containerRef.current.getBoundingClientRect();
+    caretRef.current.style.transform = `translate(${charRect.left - containerRect.left}px, ${charRect.top - containerRect.top}px)`;
+    caretRef.current.style.height = `${charRect.height}px`;
     caretRef.current.style.opacity = "1";
   }, [typed, wordIdx, words, ready]);
 
@@ -41,12 +39,12 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
 
   return (
     <div className="relative h-[100px] sm:h-[130px] md:h-[150px] lg:h-[180px] overflow-hidden font-mono text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.6] tracking-wide select-none">
-      <div
-        ref={caretRef}
-        className="absolute left-0 top-0 w-[2px] sm:w-[3px] bg-primary rounded-sm caret-blink pointer-events-none z-10 opacity-0"
-        style={{ boxShadow: "0 0 12px var(--caret)", transition: "transform 90ms ease-out, height 90ms ease-out" }}
-      />
-      <div ref={containerRef} className="transition-transform duration-200 ease-out">
+      <div ref={containerRef} className="relative transition-transform duration-200 ease-out">
+        <div
+          ref={caretRef}
+          className="absolute left-0 top-0 w-[2px] sm:w-[3px] bg-primary rounded-sm caret-blink pointer-events-none z-10 opacity-0"
+          style={{ boxShadow: "0 0 12px var(--caret)", transition: "transform 90ms ease-out, height 90ms ease-out" }}
+        />
         <div className="flex flex-wrap gap-x-[0.4em] sm:gap-x-[0.5em] md:gap-x-[0.6em] gap-y-1 sm:gap-y-2">
           {words.map((word, wi) => {
             const t = typed[wi] ?? "";
