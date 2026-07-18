@@ -59,7 +59,7 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
                   if (typedCh !== undefined) {
                     cls = typedCh === ch
                       ? "text-text-typed"
-                      : "text-text-error bg-[var(--text-error-bg)] rounded-sm";
+                      : "text-text-error  rounded-sm";
                   } else if (isPast) {
                     // skipped char
                     cls = "text-text-error/60 bg-[var(--text-error-bg)] rounded-sm";
