@@ -54,7 +54,7 @@ function Index() {
           </nav>
         </header>
 
-        <div className="flex-1 flex flex-col justify-center max-w-4xl w-full mx-auto">
+        <div className="flex-1 flex flex-col justify-center max-w-5xl w-full mx-auto">
           {!stats ? (
             <>
               {/* Config bar */}
