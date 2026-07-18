@@ -172,7 +172,7 @@ export function AboutPage() {
                 Start Typing
               </Link>
               <Link
-                href="/signup"
+                href="/register"
                 className="px-6 sm:px-8 py-3 rounded-lg border border-border text-foreground font-semibold tracking-wide hover:border-primary/50 hover:text-primary transition-all text-sm sm:text-base"
               >
                 Create Account
