@@ -15,9 +15,9 @@ export function Header() {
     <header className="flex items-center justify-between mb-8 sm:mb-16">
       <div className="flex items-center gap-2 sm:gap-3">
         <Link href="/">
-          <h1 className="font-display font-bold text-lg sm:text-xl tracking-tight leading-none">
-            TypingArena
-          </h1>
+         <h1 className="font-display font-bold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              TypingArena
+            </h1>
         </Link>
       </div>
       <nav className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
