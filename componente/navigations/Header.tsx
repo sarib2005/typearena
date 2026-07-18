@@ -33,7 +33,7 @@ export function Header() {
           </Link>
         ))}
         <Link
-          href="/signin"
+          href="/login"
           className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-md border border-border hover:border-primary hover:text-foreground transition-all text-xs sm:text-sm"
         >
           sign in

@@ -5,6 +5,8 @@ import { useTypingTest, type Mode, type Duration, type WordCount, type Stats } f
 import { TypingArea } from "@/componente/home/TypingArea";
 import { ResultsPanel } from "@/componente/home/ResultsPanel";
 import Link from "next/link";
+import { Header } from "@/componente/navigations/Header";
+import { Footer } from "@/componente/navigations/Footer";
 
 const DURATIONS: Duration[] = [15, 30, 60, 120];
 const COUNTS: WordCount[] = [10, 25, 50, 100];
@@ -39,20 +41,7 @@ function Home() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-8 min-h-screen flex flex-col">
         {/* Header */}
-        <header className="flex items-center justify-between mb-8 sm:mb-16">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div>
-              <h1 className="font-display font-bold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              TypingArena
-            </h1>
-            </div>
-          </div>
-          <nav className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
-            <Link href="#" className="hover:text-foreground transition-colors hidden sm:inline">leaderboard</Link>
-            <Link href="#" className="hover:text-foreground transition-colors hidden sm:inline">about</Link>
-            <Link href="login" className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-md border border-border hover:border-primary hover:text-foreground transition-all text-xs sm:text-sm">sign in</Link>
-          </nav>
-        </header>
+        <Header/>
 
         <div className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto">
           {!stats ? (
@@ -119,7 +108,7 @@ function Home() {
         </div>
 
         <footer className="mt-8 sm:mt-12 text-center text-xs text-muted-foreground">
-          <p>built for typists who care about the details</p>
+          <Footer/>
         </footer>
       </div>
     </main>
