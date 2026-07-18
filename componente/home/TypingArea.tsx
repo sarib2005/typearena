@@ -20,7 +20,8 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
   useLayoutEffect(() => {
     if (!activeWordRef.current || !containerRef.current) return;
     const wordTop = activeWordRef.current.offsetTop;
-    containerRef.current.style.transform = `translateY(-${Math.max(0, wordTop - 60)}px)`;
+    const offset = window.innerWidth < 640 ? 40 : 60;
+    containerRef.current.style.transform = `translateY(-${Math.max(0, wordTop - offset)}px)`;
   }, [wordIdx, words]);
 
   // Position caret
@@ -35,18 +36,18 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
   }, [typed, wordIdx, words, ready]);
 
   if (!ready || words.length === 0) {
-    return <div className="h-[180px]" aria-hidden />;
+    return <div className="h-[100px] sm:h-[130px] md:h-[150px] lg:h-[180px]" aria-hidden />;
   }
 
   return (
-    <div className="relative h-[180px] overflow-hidden font-mono text-3xl leading-[1.6] tracking-wide select-none">
+    <div className="relative h-[100px] sm:h-[130px] md:h-[150px] lg:h-[180px] overflow-hidden font-mono text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.6] tracking-wide select-none">
       <div
         ref={caretRef}
-        className="absolute left-0 top-0 w-[3px] bg-primary rounded-sm caret-blink pointer-events-none z-10 opacity-0"
+        className="absolute left-0 top-0 w-[2px] sm:w-[3px] bg-primary rounded-sm caret-blink pointer-events-none z-10 opacity-0"
         style={{ boxShadow: "0 0 12px var(--caret)", transition: "transform 90ms ease-out, height 90ms ease-out" }}
       />
       <div ref={containerRef} className="transition-transform duration-200 ease-out">
-        <div className="flex flex-wrap gap-x-[0.6em] gap-y-2">
+        <div className="flex flex-wrap gap-x-[0.4em] sm:gap-x-[0.5em] md:gap-x-[0.6em] gap-y-1 sm:gap-y-2">
           {words.map((word, wi) => {
             const t = typed[wi] ?? "";
             const isActive = wi === wordIdx;
@@ -59,7 +60,7 @@ export function TypingArea({ words, typed, wordIdx, finished }: Props) {
                   if (typedCh !== undefined) {
                     cls = typedCh === ch
                       ? "text-text-typed"
-                      : "text-text-error  rounded-sm";
+                      : "text-text-error rounded-sm";
                   } else if (isPast) {
                     // skipped char
                     cls = "text-text-error/60 bg-[var(--text-error-bg)] rounded-sm";
