@@ -81,7 +81,7 @@ export function ResultsPanel({ stats, onRestart }: Props) {
           className="group px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold tracking-wide hover:pulse-glow transition-all"
         >
           Try again
-          <kbd className="ml-3 px-2 py-0.5 rounded bg-black/20 text-xs font-mono">tab</kbd>
+          <kbd className="ml-3 px-2 py-0.5 rounded bg-black/20 text-xs font-mono">tab + enter</kbd>
         </button>
       </div>
     </div>
