@@ -15,7 +15,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://typingarena.com"), // Change if your domain differs
+  metadataBase: new URL("https://typingarena-five.vercel.app/"), // Change if your domain differs
 
   title: {
     default: "TypingArena - Free Online Typing Test & Speed Practice",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://typingarena.com",
+    url: "https://typingarena-five.vercel.app/",
     siteName: "TypingArena",
     title: "TypingArena - Free Online Typing Test",
     description:
