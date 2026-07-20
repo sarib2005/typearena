@@ -169,3 +169,5 @@
 @utility fade-up {
   animation: fade-up 0.5s var(--transition-smooth) both;
 }
+
+::-webkit-scrollbar{ display: none;}

@@ -67,7 +67,7 @@ export function AboutPage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-16 sm:mb-20">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-16 sm:mb-20">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -81,7 +81,7 @@ export function AboutPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Features Grid */}
           <div className="mb-16 sm:mb-20">
@@ -171,12 +171,12 @@ export function AboutPage() {
               >
                 Start Typing
               </Link>
-              <Link
+              {/* <Link
                 href="/register"
                 className="px-6 sm:px-8 py-3 rounded-lg border border-border text-foreground font-semibold tracking-wide hover:border-primary/50 hover:text-primary transition-all text-sm sm:text-base"
               >
                 Create Account
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
